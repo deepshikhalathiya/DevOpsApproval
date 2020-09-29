@@ -1,0 +1,22 @@
+name: Deploy ARM Template
+env:
+    RESOURCE_GROUP: rg-aip   
+    
+on:
+  push:
+    branches:
+      - master
+    paths:
+      - ".github/workflows/DeployARM_Prod.yml" 
+
+jobs:
+  deploy-arm-template:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout source code
+        uses: actions/checkout@master
+
+      - name: Deploy to Prod
+        shell: bash      
+        run: |
+           echo "Production Deployment in progress !"
