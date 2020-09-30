@@ -1,0 +1,19 @@
+name: Dev Deployment
+env:
+    RESOURCE_GROUP: rg-aip   
+
+on: 
+  pull_request:
+    types: [approved]
+  push:
+    branches: [stage,development]
+
+
+jobs:
+  deploy-to-dev:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy to Dev
+        shell: bash      
+        run: |
+           echo "Dev Deployment in progress !"
