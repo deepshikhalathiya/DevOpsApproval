@@ -5,9 +5,6 @@ env:
 on: 
   pull_request:
     types: [approved]
-  push:
-    branches: [stage,development]
-
 
 jobs:
   deploy-to-dev:
